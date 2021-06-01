@@ -1,0 +1,15 @@
+.login {
+  color: $pink;
+  width: 100%;
+  height: 100%;
+  padding: 14px 24px;
+}
+
+.login:hover {
+  color: $black;
+}
+
+.form-control:focus {
+  border: 3px solid $pink;
+  box-shadow: 0 0 1px $pink;
+}
