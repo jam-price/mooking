@@ -1,0 +1,20 @@
+<h1>Add a new cow</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <%= simple_form_for(@cow) do |c| %>
+        <%= c.input :name %>
+        <%= c.input :description %>
+        <%= c.input :breed %>
+        <%= c.input :color %>
+        <%= c.input :location %>
+        <%= c.input :category %>
+        <%= c.input :favorite_food %>
+        <%= c.input :price %>
+        <%= c.input :year_of_birth %>
+        <%= c.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
