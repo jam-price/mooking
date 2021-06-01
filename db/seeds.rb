@@ -9,7 +9,7 @@ cow_breeds = ['Aberdeen Angus', 'Afrikaner', 'Alderney', 'Belgian Blue', 'Belted
 
 puts 'Creating users...'
 
-20.times {
+5.times {
     User.create!(
             email: Faker::Internet.email,
             first_name: Faker::Name.first_name,
