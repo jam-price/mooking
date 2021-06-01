@@ -9,6 +9,8 @@ class CreateCows < ActiveRecord::Migration[6.0]
       t.string :category
       t.string :favorite_food
       t.float :price
+      t.date :year_of_birth
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
