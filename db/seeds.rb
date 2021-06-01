@@ -1,7 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts "Cleaning database..."
+Booking.destroy_all
+Cow.destroy_all
+User.destroy_all
+
+cow_breeds = ['Aberdeen Angus', 'Afrikaner', 'Alderney', 'Belgian Blue', 'Belted Galloway', 'Black Hereford', 'Charolais', 'Deoni', 'Fjäll', 'Hanwoo', 'Irish Moiled', 'Kherigarh', 'Latvian Brown', 'Nagori', 'Ongole', 'Pineywoods', 'Raya', 'Senepol', 'Tudanca', 'Vorderwald']
+
+puts 'Creating users...'
+
+20.times {
+    User.create!(
+            email: Faker::Internet.email,
+            first_name: Faker::Name.first_name,
+            last_name: Faker::Name.last_name,
+            password: '123456'
+        )
+}
+
+puts 'Creating cows....'
+
+20.times {
+    Cow.create!(
+        user_id: User.all.sample.id,
+        name: Faker::Creature::Dog.name, 
+        description: 'This cow is an absolutely lovely cuddler',
+        breed: cow_breeds.sample,
+        color: Faker::Color.color_name,
+        location: Faker::Address.city,
+        favorite_food: Faker::Food.dish,
+        price: rand(40..100),
+        year_of_birth: rand(1990..2020)
+    )
+}
+
+puts 'cows created'
