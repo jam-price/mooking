@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_120844) do
     t.string "category"
     t.string "favorite_food"
     t.float "price"
-    t.date "year_of_birth"
+    t.integer "year_of_birth"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
