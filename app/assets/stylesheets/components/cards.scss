@@ -123,3 +123,17 @@
   font-size: 60px;
 }
 
+.card-link {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.card-link:hover {
+  transform: scale(.95);
+
+  .card-trip {
+    transition: 0.3s ease-in;
+    border: 4px solid $pink;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.534);
+  }
+}
