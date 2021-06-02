@@ -13,7 +13,11 @@
         <i class="mdi mdi-account-cowboy-hat"></i>
       </div>
       <p class="card-text">Rent your cow out!</p>
-      <%= link_to "Add Cow", new_cow_path, class: "btn btn-flat" %>
+      <% if user_signed_in? %>
+        <%= link_to "Add Cow", new_cow_path, class: "btn btn-flat" %>
+      <% else %>
+        <%= link_to "Add Cow", new_user_session_path, class: "btn btn-flat" %>
+      <% end %>
     </div>
   </div>
   <div class="card" style="width: 18rem;">
