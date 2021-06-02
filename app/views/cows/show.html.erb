@@ -1,18 +1,12 @@
+<div class="path-link">
+  <%= link_to "< Back to all cows", cows_path %>
+</div>
+
 <h1>Welcowme!</h1>
 
 <%# if you come from new --> welcome to the family, @cow.name! %>
 <%# if you come from index --> say hello to @cow.name! %>
 
-<%# t.string "name"
-    t.text "description"
-    t.string "breed"
-    t.string "color"
-    t.string "location"
-    t.string "category"
-    t.string "favorite_food"
-    t.float "price"
-    t.integer "year_of_birth"
-    t.bigint "user_id", null: false %>
 <div class="card-cow">
   <div class="cow-image">
     <% if @cow.photo.attached? %>
