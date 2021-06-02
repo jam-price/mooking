@@ -1,9 +1,22 @@
-<h1>Add a new booking</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <h1>Add a new booking</h1>
 
-<%= simple_form_for [ @cow, @booking ] do |b| %>
-  <%= b.input :start_date %>
-  <%= b.input :end_date %>
-  <%= b.submit "Submit booking", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [ @cow, @booking ] do |b| %>
+        <%= b.input :start_date %>
+        <%= b.input :end_date %>
 
-<%= link_to "Back to cows", cows_path %>
+        <div class="text-center">
+          <div class="form-actions" style="padding: 0">
+            <%= b.submit "Submit Mooking", class: "submit" %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="text-center m-3">
+        <%= link_to "Back to cows", cows_path, class: "devise-links" %>
+      </div>
+    </div>
+  </div>
+  

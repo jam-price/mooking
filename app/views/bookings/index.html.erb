@@ -1,1 +1,12 @@
-<h1>This is the bookings page</h1>
+<h1>Your bookings</h1>
+
+<% @bookings.each do |booking| %>
+<div>
+    <div class="card">
+    <h3>Booking for <%= booking.cow.name %> </h3>
+    <p>Start Date: <%= booking.start_date %></p>
+    <p>End Date: <%= booking.end_date %></p>
+    <p>Cow: <%= booking.cow.name %></p>
+    </div>
+</div>
+<% end %>
