@@ -15,7 +15,7 @@ class CowsController < ApplicationController
     @cow = Cow.new(cow_params)
     @cow.user = current_user
     if @cow.save
-      redirect_to cow_path(@cow)
+      redirect_to cow_path(@cow, new: true)
     else
       render :new
     end

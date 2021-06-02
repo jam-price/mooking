@@ -2,10 +2,11 @@
   <%= link_to "< Back to all cows", cows_path %>
 </div>
 
-<h1>Welcowme!</h1>
-
-<%# if you come from new --> welcome to the family, @cow.name! %>
-<%# if you come from index --> say hello to @cow.name! %>
+<% if params[:new] == "true" %>
+  <h1>Welcowme to the family, <span class="bold-pink"><%= @cow.name %></span>!</h1>
+<% else %>
+  <h1>Say hello to <span class="bold-pink"><%= @cow.name %></span>!</h1>
+<% end %>
 
 <div class="card-cow">
   <div class="cow-image">
@@ -41,6 +42,5 @@
   </div>
       <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
 </div>
-
 
   <%# <%= @cow.location %>
