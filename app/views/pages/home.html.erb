@@ -2,8 +2,28 @@
   <div class="container text-center">
     <h1>Find a Cow</h1>
     <p>The only site for all your cow-y needs</p>
-    <div class="text-center">
-      <%= link_to "See Cows", cows_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="text-center my-5 container d-flex justify-content-around">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Cowner</h3>
+      <div class="pink-border">
+        <i class="mdi mdi-account-cowboy-hat"></i>
+      </div>
+      <p class="card-text">Rent your cow out!</p>
+      <%= link_to "Add Cow", new_cow_path, class: "btn btn-flat" %>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h3 class="card-title">Cowstomer</h3>
+      <div class="pink-border">
+        <i class="mdi mdi-cow"></i>
+      </div>
+      <p class="card-text">Find a cow to rent!</p>
+      <%= link_to "Find Cow", cows_path, class: "btn btn-flat" %>
     </div>
   </div>
 </div>
