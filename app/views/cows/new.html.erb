@@ -1,8 +1,8 @@
-<h1>Add a new cow</h1>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
+      <h1>Add a new cow</h1>
+
       <%= simple_form_for(@cow) do |c| %>
         <%= c.input :name %>
         <%= c.input :description %>
@@ -13,10 +13,19 @@
         <%= c.input :favorite_food %>
         <%= c.input :price %>
         <%= c.input :year_of_birth %>
-        <%= c.submit %>
+        <%= c.input :photo, as: :file %>
+
+      <div class="text-center">
+        <div class="form-actions" style="padding: 0">
+          <%= c.submit class: "submit" %>
+        </div>
+      </div>
+
       <% end %>
+
+      <div class="text-center m-3">
+        <%= link_to "Back to cows", cows_path, class: "devise-links" %>
+      </div>
     </div>
   </div>
 </div>
-
-<%= link_to "Back to cows", cows_path %>

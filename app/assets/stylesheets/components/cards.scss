@@ -1,49 +1,88 @@
 .card-trip {
-  overflow: hidden;
-  background: $black;
-  color: $pink;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 350px;
-  margin: 20px auto;
-  border: 4px dashed $white;
+    overflow: hidden;
+    background: $black;
+    color: $pink;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 350px;
+    margin: 20px auto;
+    border: 4px dashed $white;
 }
+  
+  .card-trip > img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-trip h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-trip p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
+  
+  
+  .card-trip .card-trip-infos {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+  }
+  
+  .card-trip-infos .card-trip-user {
+    position: absolute;
+    right: 16px;
+    top: -20px;
+    width: 40px;
+  }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+  .card-trip-pricing {
+    padding-right: 15px;
+  }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
+  .card-cow {
+    overflow: hidden;
+    height: 400px;
+    background: $pink;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-cow img {
+    height: 100%;
+    width: 400px;
+    object-fit: cover;
+  }
+  
+  .card-cow h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-cow p {
+    font-size: 18px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .card-cow .card-cow-infos {
+    padding: 16px;
+  }
 
-.card-trip p {
-  font-size: 12px;
-  opacity: 0.7;
-  margin: 0;
-}
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.card-trip-pricing {
-  padding-right: 15px;
-}
+  .card-cow .price-tag {
+    color: white;
+    font-weight: bolder;
+  }
 
 .card {
   background-color: rgba(0, 0, 0, 0.877);
