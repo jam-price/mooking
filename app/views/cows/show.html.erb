@@ -26,9 +26,15 @@
   </div>
 </div>
 
-<div class="text-center mt-3">
-  <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
-</div>
+<% if @cow.user == current_user %>
+  <div class="text-center mt-3">
+    <%= link_to "Edit", "#", class:"btn btn-flat" %>
+  </div>
+<% else %>
+  <div class="text-center mt-3">
+    <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
+  </div>
+<% end %>
 
 <div class="text-center mt-3">
   <div class="cow-details">
