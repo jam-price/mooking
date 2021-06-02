@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController  
   before_action :set_cow, only: [ :new, :create ]
+  before_action :authenticate_user!
 
   def index
     @bookings = Booking.all
