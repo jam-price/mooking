@@ -1,7 +1,48 @@
-<h1>Cow show page</h1>
+<h1>Welcowme!</h1>
 
-<ul>
-  <li><%= @cow.name %></li>
-  <li><%= @cow.description %></li>
-  <li><%= @cow.location %></li>
-</ul>
+<%# if you come from new --> welcome to the family, @cow.name! %>
+<%# if you come from index --> say hello to @cow.name! %>
+
+<%# t.string "name"
+    t.text "description"
+    t.string "breed"
+    t.string "color"
+    t.string "location"
+    t.string "category"
+    t.string "favorite_food"
+    t.float "price"
+    t.integer "year_of_birth"
+    t.bigint "user_id", null: false %>
+<div class="card-cow">
+  <div class="cow-image">
+    <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+  </div>
+
+  <div class="cow-details">
+    <h2><%= @cow.name %></h2>
+    <p><%= @cow.description %></p>
+    <div class="price-tag">
+      <p>£<%= @cow.price %>0 / day</p>
+    </div>
+  </div>
+</div>
+
+<div class="text-center mt-3">
+  <%= link_to "Mook me", "#", class:"btn btn-flat" %>
+</div>
+
+<div class="text-center mt-3">
+  <div class="cow-details">
+    <h2><%= @cow.name %>'s ID card</h2>
+    <p>Date of birth: <span class="bold-pink"><%= @cow.year_of_birth %></span></p>
+    <p>Breed: <span class="bold-pink"><%= @cow.breed %></span></p>
+    <p>Colour: <span class="bold-pink"><%= @cow.color %></span></p>
+    <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
+    <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
+    <%# <p><%= @cow.user_id</p> %>
+  </div>
+      <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
+</div>
+
+
+  <%# <%= @cow.location %>
