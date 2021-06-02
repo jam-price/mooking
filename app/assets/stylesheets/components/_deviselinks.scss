@@ -1,18 +1,11 @@
 .devise-links {
   text-decoration: none;
+  opacity: .6;
   color: $pink;
 }
 
 .devise-links:hover {
   text-decoration: none;
   color: $pink;
-  opacity: .6;
-}
-
-.login {
-  color: $pink
-}
-
-.login:hover {
-  color: $black !important;
+  opacity: 1;
 }
