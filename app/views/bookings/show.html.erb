@@ -1,0 +1,10 @@
+<h1>You've made a new Mooking!</h1>
+
+<ul>
+  <li>Your Cow is <%= @booking.cow.name %> 🐄</li>
+  <li>From <%= @booking.start_date %></li>
+  <li>until <%= @booking.end_date %></li>
+  <li>Owner contact details: <%= @booking.cow.user.email %></li>
+</ul>
+
+<%= link_to "Back to all cows",  cows_path %>

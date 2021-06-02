@@ -9,7 +9,11 @@
 
 <div class="card-cow">
   <div class="cow-image">
-    <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+    <% if @cow.photo.attached? %>
+      <%= cl_image_tag @cow.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+    <% end %>
   </div>
 
   <div class="cow-details">
