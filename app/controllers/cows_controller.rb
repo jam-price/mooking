@@ -29,7 +29,7 @@ class CowsController < ApplicationController
       :breed, :color,
       :location, :category,
       :favorite_food, :price,
-      :year_of_birth
+      :year_of_birth, :photo
     )
   end
 end
