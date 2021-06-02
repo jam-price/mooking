@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController  
   before_action :set_cow, only: [ :new, :create ]
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
     @booking = Booking.new
   end
