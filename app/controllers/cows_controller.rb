@@ -43,10 +43,10 @@ class CowsController < ApplicationController
   def cow_params
     params.require(:cow).permit(
       :name, :description,
-      :breed, :color,
+      :breed, :color, 
       :location, :category,
       :favorite_food, :price,
-      :year_of_birth, :photo
+      :year_of_birth, :photo, colors: []
     )
   end
 end

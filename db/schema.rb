@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_03_100909) do
+ActiveRecord::Schema.define(version: 2021_06_03_160719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_100909) do
     t.string "name"
     t.text "description"
     t.string "breed"
-    t.string "color"
+    t.string "color", array: true
     t.string "location"
     t.string "category"
     t.string "favorite_food"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_100909) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.text "colors", default: [], array: true
     t.index ["user_id"], name: "index_cows_on_user_id"
   end
 

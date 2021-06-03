@@ -7,7 +7,7 @@
         <%= c.input :name %>
         <%= c.input :description %>
         <%= c.input :breed, collection: Cow::BREEDS %>
-        <%= c.input :color, multiple: true,
+        <%= c.input :colors, multiple: true,
                     collection: Cow::COLORS, 
                     as: :check_boxes,
                     input_html: { class: "tag-selector" },

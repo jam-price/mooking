@@ -3,7 +3,7 @@ class Cow < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
   
-  validates :name, :description, :breed, :location, :price, :category, presence: true
+  # validates :name, :description, :breed, :location, :price, :category, presence: true
 
   BREEDS = [
     'Aberdeen Angus', 
