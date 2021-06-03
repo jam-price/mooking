@@ -29,6 +29,10 @@
 <% if @cow.user == current_user %>
   <div class="text-center mt-3">
     <%= link_to "Edit", "#", class:"btn btn-flat" %>
+    <%= link_to "Delete",
+                  cow_path(@cow),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class:"btn btn-flat" %>
   </div>
 <% else %>
   <div class="text-center mt-3">
