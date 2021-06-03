@@ -34,7 +34,7 @@ puts 'Creating cows....'
         # color: Faker::Color.color_name,
         color: colors.sample,
         location: european_cities.sample,
-
+        category: categorys.sample,
         favorite_food: Faker::Food.dish,
         price: rand(40..100),
         year_of_birth: rand(1990..2020)

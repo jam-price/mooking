@@ -1,6 +1,7 @@
 <div class="text-center mt-3">
   <h1>All the cows</h1>
   <%= link_to "Add a cow", new_cow_path, class:"btn btn-flat" %>
+  <%= render 'filter' %>
   <div class="container mx-auto d-flex justify-content-between flex-wrap">
     <% @cows.each do |cow|%>
       <%= link_to cow_path(cow), class:"mx-auto card-link" do %>

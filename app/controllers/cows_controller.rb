@@ -1,6 +1,10 @@
 class CowsController < ApplicationController
   def index
-    @cows = Cow.all
+    if params[:cow]
+      @cows = Cow.where(category: params[:cow])
+    else
+      @cows = Cow.all
+    end
   end
   def show
     @cow = Cow.find(params[:id])
