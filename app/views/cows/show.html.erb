@@ -45,6 +45,6 @@
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
   </div>
-      <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
+      <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound.mp3') } %>
 </div>
   <%# <%= @cow.location %>
