@@ -1,13 +1,11 @@
 <div class="path-link">
   <%= link_to "< Back to all cows", cows_path %>
 </div>
-
 <% if params[:new] == "true" %>
   <h1>Welcowme to the family, <span class="bold-pink"><%= @cow.name %></span>!</h1>
 <% else %>
   <h1>Say hello to <span class="bold-pink"><%= @cow.name %></span>!</h1>
 <% end %>
-
 <div class="card-cow">
   <div class="cow-image">
     <% if @cow.photo.attached? %>
@@ -16,7 +14,6 @@
       <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
     <% end %>
   </div>
-
   <div class="cow-details">
     <h2><%= @cow.name %></h2>
     <p><%= @cow.description %></p>
@@ -25,10 +22,10 @@
     </div>
   </div>
 </div>
-
 <% if @cow.user == current_user %>
   <div class="text-center mt-3">
-    <%= link_to "Edit", "#", class:"btn btn-flat" %>
+
+    <%= link_to "Edit", edit_cow_path(@cow), class:"btn btn-flat" %>
     <%= link_to "Delete",
                   cow_path(@cow),
                   method: :delete,
@@ -39,7 +36,6 @@
     <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
   </div>
 <% end %>
-
 <div class="text-center mt-3">
   <div class="cow-details">
     <h2><%= @cow.name %>'s ID card</h2>
@@ -52,5 +48,4 @@
   </div>
       <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
 </div>
-
   <%# <%= @cow.location %>

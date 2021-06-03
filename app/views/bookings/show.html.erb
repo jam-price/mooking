@@ -3,8 +3,8 @@
   <ul>
     <div class="card">
       <p>Your Cow is <%= @booking.cow.name %> 🐄</p>
-      <p>From <%= @booking.start_date %></p>
-      <p>until <%= @booking.end_date %></p>
+      <% length=(@booking.end_date - @booking.start_date).to_i + 1 %>
+      <p>From <%= @booking.start_date.strftime("%d/%m/%Y") %> until <%= @booking.end_date.strftime("%d/%m/%Y") %> (<%= pluralize(length, "day") %>)</p>
       <p>Owner contact details: <%= @booking.cow.user.email %></p>
     </div>
   </ul>

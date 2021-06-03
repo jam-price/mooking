@@ -27,8 +27,15 @@ import "@mdi/font/css/materialdesignicons.css"
 import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { playSound } from './components/sound';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
+  playSound();
+
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
