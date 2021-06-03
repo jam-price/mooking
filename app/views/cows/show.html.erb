@@ -34,7 +34,7 @@
   </div>
 <% else %>
   <div class="card_container">
-    <div class="show_card_container">
+    <div class="booking_card_container">
       <%= simple_form_for [ @cow, @booking ], html: { autocomplete: "off" } do |b| %>
         <%= b.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= b.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -47,12 +47,12 @@
       <% end %>
     </div>
 <% end %>
-    <div class="show_card_container">
+    <div class="id_card_container">
       <div class="cow-details">
         <h2><%= @cow.name %>'s ID card</h2>
         <p>Date of birth: <span class="bold-pink"><%= @cow.year_of_birth %></span></p>
         <p>Breed: <span class="bold-pink"><%= @cow.breed %></span></p>
-        <p>Colour: <span class="bold-pink"><%= @cow.colors %></span></p>
+        <p>Colour: <span class="bold-pink"><%= @cow.colors[1..-1] %></span></p>
         <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
         <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
         <%# <p><%= @cow.user_id</p> %>

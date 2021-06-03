@@ -8,10 +8,17 @@
   font-style: italic;
 }
 
-// .card_container {
-//   margin: 32px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-content: center;
-// }
+.card_container {
+  margin: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
 
+.booking_card_container {
+  margin-left: 30px;
+}
+
+.id_card_container {
+  margin-left: 130px;
+}
