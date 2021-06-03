@@ -26,10 +26,16 @@ import "@mdi/font/css/materialdesignicons.css"
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initMapbox } from '../plugins/init_mapbox';
+import { playSound } from './components/sound';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initMapbox();
+  playSound();
+
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
