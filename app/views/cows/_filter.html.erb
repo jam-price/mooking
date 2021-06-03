@@ -1,0 +1,16 @@
+<%= form_tag cows_path, method: :get do %>
+  <%= select_tag "cow", options_for_select(['Select Category', 'Battle Cow', 'Cuddling Cow', 'Laughing Cow', 'Emotional support Cow', 'Farming Cow', "Milking Cow", "Friendship Cow"])%>
+  <%= submit_tag "Search", class: "btn btn-flat" %>
+<% end %>
+
+<%# <form action="/cows" method="get"></form>
+<select name="post[category]" id="post_category">
+    <option value="Battle cow">Battle Cow</option>
+    <option value="Cuddling Cow">Cuddling Cow</option>
+    <option value="Laughing Cow">Laughing Cow</option>
+    <option value="Emotional support Cow">Emotional support Cow</option>
+    <option value="Farming Cow">Farming Cow</option>
+    <option value="Milking Cow">Milking Cow</option>
+    <option value="Friendship Cow">Friendship Cow</option>
+    <input type="submit" value="Submit">
+</select> %>
