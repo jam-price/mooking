@@ -9,4 +9,27 @@
 
   .mapboxgl-marker {
     background-image: asset-data-url('cowface_icon.svg');
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup-content{
+    background-color: rgba(0, 0, 0, 1) !important;
+  }
+
+  .mapboxgl-popup-content h3{
+    margin-top: 12px;
+  }
+
+  .mapboxgl-popup-content .card, .mapboxgl-popup-content .card .btn {
+    box-shadow: none;
+  }
+
+  .mapboxgl-popup-tip {
+    display: none;
+  }
+
+  .mapboxgl-popup-close-button {
+    color: white;
+    font-size: 32px;
+    padding: 6px;
   }

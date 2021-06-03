@@ -1,2 +1,6 @@
-<h2><%= cow.name %></h2>
-<p><%= cow.location %></p>
+<div class="card m-0">
+  <h3><%= cow.name %> </h3>
+  <p><%= cow.location %></p>
+  <h3>£<%= cow.price %>0 </h3>
+  <%= link_to 'See Cow', cow_path(cow), class:"btn btn-flat"  %>
+</div>
