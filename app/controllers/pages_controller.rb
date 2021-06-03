@@ -7,5 +7,6 @@ class PagesController < ApplicationController
         lat: cow.latitude,
         lng: cow.longitude
       }
+    end
   end
 end
