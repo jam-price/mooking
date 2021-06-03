@@ -1,19 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-6">
-      <h1>Add a new cow</h1>
+      <h1>Edit your cow</h1>
 
       <%= simple_form_for(@cow) do |c| %>
         <%= c.input :name %>
         <%= c.input :description %>
-        <%= c.input :breed, collection: Cow::BREEDS %>
-        <%= c.input :color, multiple: true,
-                    collection: Cow::COLORS, 
-                    as: :check_boxes,
-                    input_html: { class: "tag-selector" },
-                    item_wrapper_class: 'tag-item' %>
+        <%= c.input :breed %>
+        <%= c.input :color %>
         <%= c.input :location %>
-        <%= c.input :category, collection: Cow::CATEGORYS %>
+        <%= c.input :category %>
         <%= c.input :favorite_food %>
         <%= c.input :price %>
         <%= c.input :year_of_birth %>
