@@ -28,7 +28,7 @@
 
 <% if @cow.user == current_user %>
   <div class="text-center mt-3">
-    <%= link_to "Edit", "#", class:"btn btn-flat" %>
+    <%= link_to "Edit", edit_cow_path(@cow), class:"btn btn-flat" %>
   </div>
 <% else %>
   <div class="text-center mt-3">
