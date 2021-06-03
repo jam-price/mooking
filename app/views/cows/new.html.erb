@@ -6,8 +6,12 @@
       <%= simple_form_for(@cow) do |c| %>
         <%= c.input :name %>
         <%= c.input :description %>
-        <%= c.input :breed %>
-        <%= c.input :color %>
+        <%= c.input :breed, collection: Cow::BREEDS %>
+        <%= c.input :color, 
+                    collection: Cow::COLORS, 
+                    as: :check_boxes,
+                    input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item' %>
         <%= c.input :location %>
         <%= c.input :category %>
         <%= c.input :favorite_food %>

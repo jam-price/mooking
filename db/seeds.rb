@@ -6,6 +6,8 @@ Cow.destroy_all
 User.destroy_all
 
 cow_breeds = ['Aberdeen Angus', 'Afrikaner', 'Alderney', 'Belgian Blue', 'Belted Galloway', 'Black Hereford', 'Charolais', 'Deoni', 'Fjäll', 'Hanwoo', 'Irish Moiled', 'Kherigarh', 'Latvian Brown', 'Nagori', 'Ongole', 'Pineywoods', 'Raya', 'Senepol', 'Tudanca', 'Vorderwald']
+colors = ['Beige', 'Black', 'Chestnut', 'Chocolate', 'Cocoa', 'Desert sand', 'Rosy brown', 'Sandy brown', 'smokey grey', 'Tan', 'Taupe', 'Walnut brown', 'White']
+categorys = []
 
 puts 'Creating users...'
 
@@ -26,7 +28,8 @@ puts 'Creating cows....'
         name: Faker::Creature::Dog.name, 
         description: 'This cow is an absolutely lovely cuddler',
         breed: cow_breeds.sample,
-        color: Faker::Color.color_name,
+        # color: Faker::Color.color_name,
+        color: colors.sample,
         location: Faker::Address.city,
         favorite_food: Faker::Food.dish,
         price: rand(40..100),
