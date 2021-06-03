@@ -1,6 +1,9 @@
 class CowsController < ApplicationController
   def index
-    if params[:cow]
+    if params[:cow] == "Select Category"
+      @cows = Cow.all
+      redirect_to cows_path
+    elsif params[:cow]
       @cows = Cow.where(category: params[:cow])
     else
       @cows = Cow.all
