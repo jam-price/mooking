@@ -14,6 +14,16 @@
   box-shadow: 0 0 1px $pink;
 }
 
+.is-valid {
+  border: 1px solid $pink !important;
+}
+
+.is-valid:focus {
+  border: 1px solid $pink !important;
+  box-shadow: 0 0 3px $pink !important;
+}
+
+
 .submit {
   width: 100%;
   height: 100%;
