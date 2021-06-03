@@ -43,4 +43,14 @@ class Cow < ApplicationRecord
     'Walnut brown',
     'White'
   ]
+
+  CATEGORYS = [
+    'Battle Cow',
+    'Cuddling Cow',
+    'Laughing Cow',
+    'Emotional support Cow',
+    'Farming Cow',
+    'Milking Cow',
+    'Friendship Cow'
+  ]
 end

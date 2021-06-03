@@ -7,7 +7,7 @@ User.destroy_all
 
 cow_breeds = ['Aberdeen Angus', 'Afrikaner', 'Alderney', 'Belgian Blue', 'Belted Galloway', 'Black Hereford', 'Charolais', 'Deoni', 'Fjäll', 'Hanwoo', 'Irish Moiled', 'Kherigarh', 'Latvian Brown', 'Nagori', 'Ongole', 'Pineywoods', 'Raya', 'Senepol', 'Tudanca', 'Vorderwald']
 colors = ['Beige', 'Black', 'Chestnut', 'Chocolate', 'Cocoa', 'Desert sand', 'Rosy brown', 'Sandy brown', 'smokey grey', 'Tan', 'Taupe', 'Walnut brown', 'White']
-categorys = []
+categorys = ['Battle Cow', 'Cuddling Cow', 'Laughing Cow', 'Emotional support Cow', 'Farming Cow', 'Milking Cow', 'Friendship Cow']
 
 puts 'Creating users...'
 
