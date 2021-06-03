@@ -6,6 +6,9 @@ Cow.destroy_all
 User.destroy_all
 
 cow_breeds = ['Aberdeen Angus', 'Afrikaner', 'Alderney', 'Belgian Blue', 'Belted Galloway', 'Black Hereford', 'Charolais', 'Deoni', 'Fjäll', 'Hanwoo', 'Irish Moiled', 'Kherigarh', 'Latvian Brown', 'Nagori', 'Ongole', 'Pineywoods', 'Raya', 'Senepol', 'Tudanca', 'Vorderwald']
+european_cities = ['London', 'Paris', 'Bucharest', 'Berlin', 'Stockholm', 'Dubrovnik', 'Ljubljana', 'Budapest', 'Madrid', 'Manchester', 'Edinburgh', 'Dublin', 'Warsaw', 'Milan' ]
+cow_images = []
+
 
 puts 'Creating users...'
 
@@ -27,7 +30,7 @@ puts 'Creating cows....'
         description: 'This cow is an absolutely lovely cuddler',
         breed: cow_breeds.sample,
         color: Faker::Color.color_name,
-        location: Faker::Address.city,
+        location: european_cities.sample,
         favorite_food: Faker::Food.dish,
         price: rand(40..100),
         year_of_birth: rand(1990..2020)
