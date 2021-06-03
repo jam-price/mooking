@@ -4,8 +4,6 @@ const playSound = () => {
     const audio = new Audio(button.dataset.audio);
     button.addEventListener("click", (event) => {
       event.preventDefault();
-      // event.currentTarget.classList.add("disabled");
-      // event.currentTarget.innerHTML = "Bingo!";
       audio.play();
     });
   }
