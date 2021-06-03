@@ -32,7 +32,7 @@
   </div>
 <% else %>
   <div class="text-center mt-3">
-    <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
+    <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat", data: { turbolinks: false } %>
   </div>
 <% end %>
 
@@ -46,7 +46,7 @@
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
   </div>
-      <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
+      <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound.mp3') } %>
 </div>
 
   <%# <%= @cow.location %>
