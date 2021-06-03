@@ -33,7 +33,6 @@ class Cow < ApplicationRecord
     'Black',
     'Chestnut',
     'Chocolate',
-    'Cocoa',
     'Desert sand',
     'Rosy brown',
     'Sandy brown',
