@@ -34,3 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   playSound();
 });
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
