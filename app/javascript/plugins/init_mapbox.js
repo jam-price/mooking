@@ -1,5 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -33,6 +35,9 @@ const initMapbox = () => {
       .setPopup(popup)
       .addTo(map);
   });
+
+  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl }));
 
   fitMapToMarkers(map, markers);
   }
