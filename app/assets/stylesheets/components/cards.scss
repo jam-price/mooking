@@ -47,13 +47,20 @@
     padding-right: 15px;
   }
 
+  .cow-details {
+    margin-left: 24px;
+  }
+
   .card-cow {
     overflow: hidden;
     height: 400px;
     background: $pink;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: 4px dashed white;
     display: flex;
     align-items: center;
+    margin-left: 24px;
+    margin-right: 16px;
   }
   
   .card-cow img {
@@ -61,6 +68,7 @@
     width: 400px;
     object-fit: cover;
   }
+
   
   .card-cow h2 {
     font-size: 24px;

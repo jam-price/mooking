@@ -35,6 +35,7 @@
 <% else %>
   <div class="card_container">
     <div class="booking_card_container">
+    <h2>Make a Mooking</h2>
       <%= simple_form_for [ @cow, @booking ], html: { autocomplete: "off" } do |b| %>
         <%= b.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
         <%= b.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -57,7 +58,7 @@
         <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
         <%# <p><%= @cow.user_id</p> %>
         </div>
-            <%= link_to "Listen to me", "#", class:"btn btn-flat" %>
+            <%= link_to "Listen to me", "#", class:"btn btn-flat btn-center" %>
         </div>
       </div>
     </div>
