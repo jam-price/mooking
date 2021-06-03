@@ -6,7 +6,8 @@ class PagesController < ApplicationController
       {
         lat: cow.latitude,
         lng: cow.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { cow: cow })
+        info_window: render_to_string(partial: "info_window", locals: { cow: cow }),
+        image_url: helpers.asset_url('cowface_icon.svg')
       }
     end
   end
