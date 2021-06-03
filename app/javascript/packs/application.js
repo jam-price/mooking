@@ -28,14 +28,13 @@ import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { playSound } from './components/sound';
+import { initFlatpickr } from "../plugins/flatpickr";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initMapbox();
   playSound();
-
+  
 });
-
-import { initFlatpickr } from "../plugins/flatpickr";
 
 initFlatpickr();
