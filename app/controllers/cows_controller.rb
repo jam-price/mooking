@@ -28,6 +28,13 @@ class CowsController < ApplicationController
     @cow = Cow.find(params[:id])
   end
 
+
+  def destroy 
+    @cow = Cow.find(params[:id])
+    @cow.destroy
+    redirect_to cows_path
+  end
+
   def update
     @cow = Cow.find(params[:id])
     @cow.update(cow_params)
