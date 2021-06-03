@@ -4,6 +4,7 @@ class CowsController < ApplicationController
   end
   def show
     @cow = Cow.find(params[:id])
+    @booking = Booking.new
   end
   def new
     @cow = Cow.new
