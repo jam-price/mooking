@@ -15,7 +15,7 @@
         <%= c.input :location %>
         <%= c.input :category, collection: Cow::CATEGORYS %>
         <%= c.input :favorite_food %>
-        <%= c.input :price %>
+        <%= c.input :price, input_html: { min: '0', step: 'any'} %>
         <%= c.input :year_of_birth %>
         <%= c.input :photo, as: :file %>
 
