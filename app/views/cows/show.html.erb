@@ -45,7 +45,13 @@
     <h2><%= @cow.name %>'s ID card</h2>
     <p>Date of birth: <span class="bold-pink"><%= @cow.year_of_birth %></span></p>
     <p>Breed: <span class="bold-pink"><%= @cow.breed %></span></p>
-    <p>Colour: <span class="bold-pink"><%= @cow.colors[1..-1].join(", ") %></span></p>
+    <p>Colour: 
+      <span class="bold-pink">
+        <% if @cow.colors.length > 1 %>
+          <%= @cow.colors[1..-1].join(", ") %>
+        <% end %>
+      </span>
+    </p>
     <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>

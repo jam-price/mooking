@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_160719) do
     t.string "name"
     t.text "description"
     t.string "breed"
-    t.string "color"
+    t.string "color", array: true
     t.string "location"
     t.string "category"
     t.string "favorite_food"
