@@ -52,8 +52,9 @@
     <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
-
+      <div class="text-center mt-4 pt-1">
       <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound_short.mp3') } %>
+      </div>
     </div>
   <div class="showmap-container w-40">
     <div id="map"
@@ -78,7 +79,7 @@
   </div>
 <% end %>
 
-<div class="text-center m-3">
+<div class="text-center m-3 mb-4">
   <%= link_to "Back to cows", cows_path, class: "devise-links" %>
 </div>
 
