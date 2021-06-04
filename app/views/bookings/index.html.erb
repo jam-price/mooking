@@ -9,7 +9,11 @@
       <% @bookings.each_with_index do |booking, index| %>
           <%= link_to cow_path(booking.cow), class:"mx-auto card-link" do %>
             <div class="card-booking">
-              <%= cl_image_tag booking.cow.photo.key, height: 150, width: 200, crop: :fill %>
+              <% if booking.cow.photo.attached? %>
+                <%= cl_image_tag booking.cow.photo.key, height: 150, width: 200, crop: :fill %>
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60"/>
+              <% end %>
               <div class="card-booking-infos">
                 <h2>Mooking #<%= index + 1 %> for <%= booking.cow.name %> </h2>
                 <p>Start Date: <%= booking.start_date.strftime("%d/%m/%Y") %></p>
