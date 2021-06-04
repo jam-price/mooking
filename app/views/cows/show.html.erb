@@ -6,19 +6,21 @@
 <% else %>
   <h1>Say hello to <span class="bold-pink"><%= @cow.name %></span>!</h1>
 <% end %>
-<div class="card-cow">
-  <div class="cow-image">
-    <% if @cow.photo.attached? %>
-      <%= cl_image_tag @cow.photo.key, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
-    <% end %>
-  </div>
-  <div class="cow-details">
-    <h2><%= @cow.name %></h2>
-    <p><%= @cow.description %></p>
-    <div class="price-tag">
-      <p>£<%= @cow.price %>0 / day</p>
+<div class="card-cow-container">
+  <div class="card-cow">
+    <div class="cow-image">
+      <% if @cow.photo.attached? %>
+        <%= cl_image_tag @cow.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag "https://images.unsplash.com/photo-1564085352725-08da0272627d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y293fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=60" %>
+      <% end %>
+    </div>
+    <div class="cow-details">
+      <h2><%= @cow.name %></h2>
+      <p><%= @cow.description %></p>
+      <div class="price-tag">
+        <p>£<%= @cow.price %>0 / day</p>
+      </div>
     </div>
   </div>
 </div>
@@ -31,21 +33,47 @@
                   method: :delete,
                   data: { confirm: "Are you sure?" }, class:"btn btn-flat" %>
   </div>
-<% else %>
+<% end %>
+
+<% if @cow.user != current_user %>
   <div class="text-center mt-3">
     <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
   </div>
 <% end %>
-<div class="text-center mt-3">
+
+<div class="id_card_container">
   <div class="cow-details">
     <h2><%= @cow.name %>'s ID card</h2>
     <p>Date of birth: <span class="bold-pink"><%= @cow.year_of_birth %></span></p>
     <p>Breed: <span class="bold-pink"><%= @cow.breed %></span></p>
-    <p>Colour: <span class="bold-pink"><%= @cow.color %></span></p>
+    <p>Colour: <span class="bold-pink"><%= @cow.colors[1..-1].join(", ") %></span></p>
     <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
+    </div>
+        <%= link_to "Listen to me", "#", class:"btn btn-flat btn-center" %>
+    </div>
   </div>
+
       <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound_short.mp3') } %>
+
 </div>
-  <%# <%= @cow.location %>
+
+<% if @cow.user != current_user %>
+  <div class="booking_card_container">
+    <h2>Make a Mooking</h2>
+    <%= simple_form_for [ @cow, @booking ], html: { autocomplete: "off" } do |b| %>
+      <%= b.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= b.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+
+      <div class="text-center">
+        <div class="form-actions" style="padding: 0">
+          <%= b.button :submit, "Submit Mooking", class: "submit" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%# <%= @cow.location %>
+
