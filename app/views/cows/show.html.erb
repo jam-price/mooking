@@ -25,7 +25,6 @@
 </div>
 <% if @cow.user == current_user %>
   <div class="text-center mt-3">
-
     <%= link_to "Edit", edit_cow_path(@cow), class:"btn btn-flat" %>
     <%= link_to "Delete",
                   cow_path(@cow),
@@ -33,15 +32,13 @@
                   data: { confirm: "Are you sure?" }, class:"btn btn-flat" %>
   </div>
 <% end %>
-
 <% if @cow.user != current_user %>
-  <div class="text-center mt-3">
+  <div id="mook-me" class="text-center mt-5">
     <%= link_to "Mook me", new_cow_booking_path(@cow), class:"btn btn-flat" %>
   </div>
 <% end %>
-
-<div class="id_card_container">
-  <div class="cow-details">
+<div id="mapcow-details" class=" mt-5 container d-flex justify-content-around align-items-center flex-wrap">
+  <div id="cow-details" class="cow-details mb-5 lg-m-5">
     <h2><%= @cow.name %>'s ID card</h2>
     <p>Date of birth: <span class="bold-pink"><%= @cow.year_of_birth %></span></p>
     <p>Breed: <span class="bold-pink"><%= @cow.breed %></span></p>
@@ -55,22 +52,23 @@
     <p>Category: <span class="bold-pink"><%= @cow.category %></span></p>
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
-    </div>
-        <%= link_to "Listen to me", "#", class:"btn btn-flat btn-center" %>
+    <%= link_to "Listen to me", "#", class:"btn btn-flat btn-center" %>
+  </div>
+  <div class="showmap-container w-40">
+    <div id="map"
+       style="width: 100%; height: 600px;"
+       data-markers="<%= @markers.to_json %>"
+       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
-      <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound_short.mp3') } %>
-
 </div>
-
+</div>
 <% if @cow.user != current_user %>
-  <div class="booking_card_container">
+  <div id="booking-form" class="container my-5">
     <h2>Make a Mooking</h2>
     <%= simple_form_for [ @cow, @booking ], html: { autocomplete: "off" } do |b| %>
       <%= b.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= b.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-
       <div class="text-center">
         <div class="form-actions" style="padding: 0">
           <%= b.button :submit, "Submit Mooking", class: "submit" %>
@@ -85,4 +83,3 @@
 </div>
 
 <%# <%= @cow.location %>
-
