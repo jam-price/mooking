@@ -34,7 +34,7 @@ puts 'Creating users...'
 
 puts 'Creating cows....'
 
-20.times {
+15.times {
     Cow.create!(
         user_id: User.all.sample.id,
         name: Faker::Creature::Dog.name,
