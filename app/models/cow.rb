@@ -4,7 +4,7 @@ class Cow < ApplicationRecord
   has_one_attached :photo
   
   validates :name, :description, :breed, :location, :price, :category, presence: true
-  validates :price, inclusion: { in: [0..500]}
+
   BREEDS = [
     'Aberdeen Angus', 
     'Afrikaner',  
