@@ -3,7 +3,7 @@
   <%= link_to "Add a cow", new_cow_path, class:"btn btn-flat" %>
   <div class="container mx-auto d-flex justify-content-between flex-wrap">
     <% @cows.each do |cow|%>
-      <%= link_to cow_path(cow), class:"mx-auto card-link" do %>
+      <%= link_to cow_path(cow), class:"mx-auto card-link", data: { turbolinks: false } do %>
         <div class="card-trip">
           <% if cow.photo.attached? %>
             <%= cl_image_tag cow.photo.key, height: 300, width: 400, crop: :fill %>
