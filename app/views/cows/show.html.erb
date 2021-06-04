@@ -26,6 +26,7 @@
 </div>
 <% if @cow.user == current_user %>
   <div class="text-center mt-3">
+
     <%= link_to "Edit", edit_cow_path(@cow), class:"btn btn-flat" %>
     <%= link_to "Delete",
                   cow_path(@cow),
@@ -53,6 +54,9 @@
         <%= link_to "Listen to me", "#", class:"btn btn-flat btn-center" %>
     </div>
   </div>
+
+      <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound_short.mp3') } %>
+
 </div>
 
 <% if @cow.user != current_user %>
