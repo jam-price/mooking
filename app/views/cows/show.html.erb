@@ -1,11 +1,10 @@
-<div class="path-link">
-  <%= link_to "< Back to all cows", cows_path %>
+<div class="text-center mt-3">
+  <% if params[:new] == "true" %>
+    <h1>Welcowme to the family, <span class="bold-pink"><%= @cow.name %></span>!</h1>
+  <% else %>
+    <h1>Say hello to <span class="bold-pink"><%= @cow.name %></span>!</h1>
+  <% end %>
 </div>
-<% if params[:new] == "true" %>
-  <h1>Welcowme to the family, <span class="bold-pink"><%= @cow.name %></span>!</h1>
-<% else %>
-  <h1>Say hello to <span class="bold-pink"><%= @cow.name %></span>!</h1>
-<% end %>
 <div class="card-cow-container">
   <div class="card-cow">
     <div class="cow-image">
@@ -74,6 +73,10 @@
     <% end %>
   </div>
 <% end %>
+
+<div class="text-center m-3">
+  <%= link_to "Back to cows", cows_path, class: "devise-links" %>
+</div>
 
 <%# <%= @cow.location %>
 
