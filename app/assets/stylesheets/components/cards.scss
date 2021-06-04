@@ -53,7 +53,7 @@
 
   .card-cow {
     overflow: hidden;
-    height: 350px;
+    height: 300px;
     background: $pink;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border: 4px dashed white;
@@ -67,7 +67,7 @@
   
   .card-cow img {
     height: 100%;
-    width: 400px;
+    // width: 400px;
     object-fit: cover;
   }
 
