@@ -53,11 +53,8 @@
     <p>Favourite food: <span class="bold-pink"><%= @cow.favorite_food %></span></p>
     <%# <p><%= @cow.user_id</p> %>
 
-    </div>
       <%= link_to "Listen to me", "#", class:"btn btn-flat moo", data: { audio: audio_path('moo_sound_short.mp3') } %>
     </div>
-  </div>
-  </div>
   <div class="showmap-container w-40">
     <div id="map"
        style="width: 100%; height: 600px;"
@@ -65,8 +62,6 @@
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-
-</div>
 </div>
 <% if @cow.user != current_user %>
   <div id="booking-form" class="container my-5">
