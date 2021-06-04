@@ -12,6 +12,17 @@ class CowsController < ApplicationController
   def show
     @cow = Cow.find(params[:id])
     @booking = Booking.new
+
+    @markers = [
+      {
+        lat: @cow.latitude,
+        lng: @cow.longitude,
+        info_window: render_to_string(partial: "show_info_window", locals: { cow: @cow }),
+        image_url: helpers.asset_url('cowface_icon.svg')
+      }
+
+    ]
+
   end
   def new
     @cow = Cow.new
